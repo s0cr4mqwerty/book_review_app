@@ -12,6 +12,7 @@
     "@prisma/adapter-pg": "^7.0.1",
     "@prisma/client": "^7.0.1",
     "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
     "jose": "^6.1.2",
     "next": "16.0.5",
     "react": "19.2.0",
