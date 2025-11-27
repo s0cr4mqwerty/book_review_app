@@ -35,7 +35,7 @@ export async function POST(request:Request) {
         const secret = new TextEncoder().encode(process.env.JWT_SECRET);
         const token = await new SignJWT({id:userFound.id, email:userFound.email})
             .setProtectedHeader({ alg: "HS256"})
-            .setExpirationTime("1h")
+            .setExpirationTime("30m")
             .sign(secret);
 
         //HttpOnly guardado
@@ -44,7 +44,7 @@ export async function POST(request:Request) {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
-            maxAge: 3600,
+            maxAge: 1800,
             path: "/",
         });
 
